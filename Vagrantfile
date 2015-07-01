@@ -9,6 +9,9 @@ Vagrant.configure(2) do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
+  # Store the current version of Vagrant for use in conditionals when dealing
+  # with possible backward compatible issues. (via wordpress-vvv)
+  vagrant_version = Vagrant::VERSION.sub(/^v/, '')
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
