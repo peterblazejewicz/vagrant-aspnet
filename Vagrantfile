@@ -49,6 +49,13 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder ".", "/vagrant", disabled: true
   config.vm.synced_folder "workspace/", "/srv/workspace"
 
+  # http://foo-o-rama.com/vagrant--stdin-is-not-a-tty--fix.html
+  # fix thx to: https://github.com/Varying-Vagrant-Vagrants/VVV/pull/633
+  config.vm.provision "fix-no-tty", type: "shell" do |s|
+    s.privileged = false
+    s.inline = "sudo sed -i '/tty/!s/mesg n/tty -s \\&\\& mesg n/' /root/.profile"
+  end
+
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
