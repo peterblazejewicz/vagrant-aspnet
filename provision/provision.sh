@@ -10,9 +10,3 @@ apt-get update
 sudo apt-get install build-essential
 # Install other build tools
 apt-get install -y make g++ git curl vim libcairo2-dev libav-tools nfs-common portmap
-# Install Node
-apt-get update
-curl -sL https://deb.nodesource.com/setup | sudo bash -
-sudo apt-get install -y nodejs
-sudo npm update -g npm
-sudo npm install -g nodemon
