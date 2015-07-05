@@ -36,3 +36,6 @@ source $DNX_USER_HOME/dnvm/dnvm.sh \
   && dnvm install $DNX_VERSION -a default \
   && dnvm alias default | xargs -i ln -s $DNX_USER_HOME/runtimes/{} $DNX_USER_HOME/runtimes/default
 export PATH=$PATH:$DNX_USER_HOME/runtimes/default/bin
+# git (will be used by Bower)
+sudo apt-get update
+sudo apt-get install -y git-core
