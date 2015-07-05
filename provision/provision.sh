@@ -47,3 +47,5 @@ sudo apt-get install -y python-software-properties \
 sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get install nodejs
+# Grunt/Gulp/Bower
+sudo npm install -g bower grunt-cli gulp
