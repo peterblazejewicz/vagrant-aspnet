@@ -1,5 +1,8 @@
 # vagrant-aspnet
 A Vagrant container with ASP .NET 5 preconfigured - built to test content scaffolded with [Yeoman ASP NET Generator](https://www.npmjs.com/package/generator-aspnet).
+Created to easily follow changes in ASP .NET 5 and overcome problems during beta periods (on my mac machine some latest  ASP .NET projects do not build fully due to misconfiguration - hence that Vagrant box idea was coined).
+
+To use, just clone this repo to your local machine and then invoke `vagrant up`. Note that on the first installation entire `ubuntu/trusty64` image will be downloaded to your local machine.
 
 ## Configuration
 
@@ -45,13 +48,13 @@ This Vagrant script configures `dnx` and `dnu` tools, sets `beta5` as default ve
 ## Example usage
 
 Let's create ASP.NET Basic Web Application:
-- scaffold basic web application in your hosting system `/workspace` directory using `yo aspnet`
+- scaffold basic web application on your hosting system in `/workspace` directory using `yo aspnet`
 - `vagrant ssh` to hosted system
 - `cd /srv/workspace` and to directory where you created scaffolded your application
 - `dnu restore`
 - `dnu build`
 - `dnx . kestrel`
-- on your hosting system open web browser to [http://localhost:5000/](http://localhost:5000/):
+- on your hosting system open web browser on this address:  [http://localhost:5000/](http://localhost:5000/):
 
 ![Basic Web Application on Ubuntu](https://cloud.githubusercontent.com/assets/14539/8512956/e6c76066-2358-11e5-9882-edc1cca1b072.png)
 
