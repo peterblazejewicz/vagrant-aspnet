@@ -7,6 +7,7 @@ A Vagrant container with ASP .NET 5 preconfigured - built to test content scaffo
 - libuv 1.4.2
 - DNX 1.0.0-beta5
 - OS ubuntu/trusty64
+- Node, Gulp, Grunt, Bower
 
 ## Description
 
