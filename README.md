@@ -54,5 +54,42 @@ Let's create ASP.NET Basic Web Application:
 
 ![Basic Web Application on Ubuntu](https://cloud.githubusercontent.com/assets/14539/8512956/e6c76066-2358-11e5-9882-edc1cca1b072.png)
 
-## TODO
-Node/NPM and Gulp/Grunt installed as CLI tools, as they are used by client-side build tools in most recent versions of ASP .NET templates. At the moment they are not required, as production/staging configuration for web project templates used CND based resources.
+## Font-end development tools support
+
+This Vagrant box installs Node, Gulp, Grunt and Bower - as new ASP .NET templates ships with package management via Bower and Grunt or Gulp build systems - with Gulp used by default in `generator-aspnet`. So once you SSH into your guest system, go to project directory and invoke NPM and other tools as usually done on hosting system.
+```
+vagrant@vagrant-ubuntu-trusty-64:/srv/workspace/WebApplicationSimple$ bower install
+bower bootstrap#3.0.0           cached git://github.com/twbs/bootstrap.git#3.0.0
+bower bootstrap#3.0.0         validate 3.0.0 against git://github.com/twbs/bootstrap.git#3.0.0
+bower bootstrap-touch-carousel#0.8.0           cached git://github.com/ixisio/bootstrap-touch-carousel.git#0.8.0
+bower bootstrap-touch-carousel#0.8.0         validate 0.8.0 against git://github.com/ixisio/bootstrap-touch-carousel.git#0.8.0
+bower hammer.js#2.0.4                          cached git://github.com/hammerjs/hammer.js.git#2.0.4
+bower hammer.js#2.0.4                        validate 2.0.4 against git://github.com/hammerjs/hammer.js.git#2.0.4
+bower jquery#2.1.4                             cached git://github.com/jquery/jquery.git#2.1.4
+bower jquery#2.1.4                           validate 2.1.4 against git://github.com/jquery/jquery.git#2.1.4
+bower jquery-validation#1.11.1                 cached git://github.com/jzaefferer/jquery-validation.git#1.11.1
+bower jquery-validation#1.11.1               validate 1.11.1 against git://github.com/jzaefferer/jquery-validation.git#1.11.1
+bower jquery-validation-unobtrusive#3.2.2      cached git://github.com/aspnet/jquery-validation-unobtrusive.git#3.2.2
+bower jquery-validation-unobtrusive#3.2.2    validate 3.2.2 against git://github.com/aspnet/jquery-validation-unobtrusive.git#3.2.2
+bower bootstrap-touch-carousel#0.8.0          install bootstrap-touch-carousel#0.8.0
+bower hammer.js#2.0.4                         install hammer.js#2.0.4
+bower jquery-validation#1.11.1                install jquery-validation#1.11.1
+bower jquery#2.1.4                            install jquery#2.1.4
+bower bootstrap#3.0.0                         install bootstrap#3.0.0
+bower jquery-validation-unobtrusive#3.2.2     install jquery-validation-unobtrusive#3.2.2
+
+bootstrap-touch-carousel#0.8.0 wwwroot/lib/bootstrap-touch-carousel
+
+hammer.js#2.0.4 wwwroot/lib/hammer.js
+
+jquery-validation#1.11.1 wwwroot/lib/jquery-validation
+
+jquery#2.1.4 wwwroot/lib/jquery
+
+bootstrap#3.0.0 wwwroot/lib/bootstrap
+└── jquery#2.1.4
+
+jquery-validation-unobtrusive#3.2.2 wwwroot/lib/jquery-validation-unobtrusive
+├── jquery#2.1.4
+└── jquery-validation#1.11.1
+```
