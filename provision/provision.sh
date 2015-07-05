@@ -39,3 +39,11 @@ export PATH=$PATH:$DNX_USER_HOME/runtimes/default/bin
 # git (will be used by Bower)
 sudo apt-get update
 sudo apt-get install -y git-core
+# node
+sudo apt-get update
+sudo apt-get install -y python-software-properties \
+  python \
+  g++
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
