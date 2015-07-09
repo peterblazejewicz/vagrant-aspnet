@@ -4,6 +4,91 @@ Created to easily follow changes in ASP .NET 5 and overcome problems during beta
 
 To use, just clone this repo to your local machine and then invoke `vagrant up`. Note that on the first installation entire `ubuntu/trusty64` image will be downloaded to your local machine.
 
+## Example workflow
+
+Start guest machine:
+```
+vagrant up
+```
+Go to `workspace` directory and scaffold ASP .NET project:
+```
+cd workspace
+yo aspnet
+
+     _-----_
+    |       |    .--------------------------.
+    |--(o)--|    |      Welcome to the      |
+   `---------´   |   marvellous ASP.NET 5   |
+    ( _´U`_ )    |        generator!        |
+    /___A___\    '--------------------------'
+     |  ~  |
+   __'.___.'__
+ ´   `  |° ´ Y `
+
+? What type of application do you want to create? (Use arrow keys)
+❯ Empty Application
+  Console Application
+  Web Application
+  Web Application Basic [without Membership and Authorization]
+  Web API Application
+  Nancy ASP.NET Application
+  Class Library
+```
+Now SSH to your container and go to project directory:
+```
+vagrant ssh
+cd /srv/workspace
+```
+Restore, build and run ASP .NET project on guest machine:
+```
+vagrant@vagrant-ubuntu-trusty-64:/srv/workspace/WebApplicationBasic$ dnu restore
+Microsoft .NET Development Utility Mono-x64-1.0.0-beta5-12103
+
+Restoring packages for /srv/workspace/WebApplicationBasic/project.json
+  CACHE https://www.nuget.org/api/v2/
+  GET https://www.nuget.org/api/v2/FindPackagesById()?id='System.Diagnostics.Debug'
+
+  [...]
+  
+  CACHE https://www.nuget.org/api/v2/package/System.Dynamic.Runtime/4.0.0-beta-23019
+  OK https://www.nuget.org/api/v2/FindPackagesById()?id='System.Linq.Expressions' 24330ms
+  CACHE https://www.nuget.org/api/v2/package/System.Linq.Expressions/4.0.0-beta-23019
+Writing lock file /srv/workspace/WebApplicationBasic/project.lock.json
+Restore complete, 26702ms elapsed
+```
+```
+vagrant@vagrant-ubuntu-trusty-64:/srv/workspace/WebApplicationBasic$ dnu build
+Microsoft .NET Development Utility Mono-x64-1.0.0-beta5-12103
+
+
+Building WebApplicationBasic for DNX,Version=v4.5.1
+  Using Project dependency WebApplicationBasic 1.0.0
+    Source: /srv/workspace/WebApplicationBasic/project.json
+
+  Using Package dependency Microsoft.AspNet.Diagnostics 1.0.0-beta5
+    Source: /home/vagrant/.dnx/packages/Microsoft.AspNet.Diagnostics/1.0.0-beta5
+    File: lib/dnx451/Microsoft.AspNet.Diagnostics.dll
+
+[...]
+
+  Using Package dependency Microsoft.CodeAnalysis.Analyzers 1.0.0-rc3
+    Source: /home/vagrant/.dnx/packages/Microsoft.CodeAnalysis.Analyzers/1.0.0-rc3
+
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time elapsed 00:00:02.2481114
+```
+```
+vagrant@vagrant-ubuntu-trusty-64:/srv/workspace/WebApplicationBasic$ dnx . kestrel
+Started
+```
+From your host machine navigate to `http://localhost:5000`.
+
+
+
 ## Configuration
 
 - mono 4.0.1
