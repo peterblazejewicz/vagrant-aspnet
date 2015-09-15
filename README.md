@@ -1,4 +1,14 @@
+# Notice: 
+
+There is now official Microsoft backed Docker image(s) for ASP.NET 5 available:
+
+https://twitter.com/jchannon/status/643689187577884672
+
+https://github.com/aspnet/aspnet-docker
+
+
 # vagrant-aspnet
+
 A Vagrant container with ASP .NET 5 preconfigured - built to test content scaffolded with [Yeoman ASP NET Generator](https://www.npmjs.com/package/generator-aspnet).
 Created to easily follow changes in ASP .NET 5 and overcome problems during beta periods (on my mac machine some latest  ASP .NET projects do not build fully due to misconfiguration - hence that Vagrant box idea was coined).
 
