@@ -1,11 +1,13 @@
-# Notice: 
+# Notice:
 
 There is now official Microsoft backed Docker image(s) for ASP.NET 5 available:
 
-https://twitter.com/jchannon/status/643689187577884672
-
+https://twitter.com/jchannon/status/643689187577884672  
 https://github.com/aspnet/aspnet-docker
 
+And `generator-aspnet` now ships with `Dockerfile` support built-in:  
+https://github.com/OmniSharp/generator-aspnet/issues/364
+https://github.com/OmniSharp/generator-aspnet/pull/368
 
 # vagrant-aspnet
 
@@ -59,7 +61,7 @@ Restoring packages for /srv/workspace/WebApplicationBasic/project.json
   GET https://www.nuget.org/api/v2/FindPackagesById()?id='System.Diagnostics.Debug'
 
   [...]
-  
+
   CACHE https://www.nuget.org/api/v2/package/System.Dynamic.Runtime/4.0.0-beta-23019
   OK https://www.nuget.org/api/v2/FindPackagesById()?id='System.Linq.Expressions' 24330ms
   CACHE https://www.nuget.org/api/v2/package/System.Linq.Expressions/4.0.0-beta-23019
